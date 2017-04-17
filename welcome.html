@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Quick Note!</title>
+
+    <link rel="stylesheet" type="text/css" href="Fonts/Material_Design/icons.css">
+    <link rel="stylesheet" type="text/css" href="CSS/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/welcomeStyle.css">
+    <link rel="stylesheet" type="text/css" href="CSS/alert.css">
+    <script type="text/javascript" src="JavaScript/jquery.min.js"></script>
+    <script type="text/javascript" src="JavaScript/json.js"></script>
+    <script type="text/javascript" src="JavaScript/jsStorage.js"></script>
+    <script type="text/javascript" src="JavaScript/store.js"></script>
+    <script type="text/javascript" src="JavaScript/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="JavaScript/preventRightClick.js"></script> -->
+    <script type="text/javascript" src="JavaScript/tether.js"></script>
+    <script type="text/javascript" src="JavaScript/bootstrap.js"></script>
+    <script type="text/javascript" src="JavaScript/swal.min.js"></script>
+    <script type="text/javascript" src="JavaScript/date.js"></script>
+    <script type="text/javascript" src="JavaScript/moment.js"></script>
+    <script type="text/javascript" src="JavaScript/welcomeScript.js"></script>
+</head>
+
+<body style="overflow: hidden;">
+    <div class="blurredContent">
+        <div class="infoBar">
+            <div class="time" id="time">Getting time</div>
+        </div>
+
+        <header>
+            <span class="title"><img src="Images/quickNoteIcon.png" alt="Quick Note Icon" height="50px" width="50px" class="quickNoteIcon" />&nbsp;Welcome!</span>
+        </header>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#intro">Intro</a></li>
+                    <li class="tab col s3"><a href="#features">Features</a></li>
+                    <li class="tab col s3"><a href="#advantages">Advantages</a></li>
+                </ul>
+            </div>
+            <div id="intro" class="col s12">
+
+                <div class="yourNotes">
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s12 m16">
+                            <div class="card white darken-1">
+                                <div class="card-content black-text" style="padding-bottom: 0; height: 274px; overflow-y: scroll;">
+                                    <p style="font-size: 10px; padding-bottom: 20px; font-family: 'Raleway', sans-serif;">
+                                        <span style="font-size: 120%; font-weight: bold;">We're so honored that you have chosen Quick Note! Let us introduce you to
+                                    our service:</span>
+                                        <br>Quick Note is a tool that allows you to jot down your thoughts or plans by creating
+                                        notes or tasks that you can view later.
+                                        <br><br>Notes can store a large amount of content, (but don't exaggerate!) allowing you to
+                                        add a title and content. They are ideal for making a list of your favorite songs, recipes,
+                                        or even taking online notes.
+                                        <br>On the other hand, tasks allow you to store a goal, to-do, or anything else that is
+                                        one line. You can also set a due date for your tasks.
+                                        <br><br>You can easily add tasks and notes by pressing the plus button at the top right
+                                        corner of the notes or tasks page, and retrieve your notes and tasks anytime on any computer.
+                                        <b>Please note that your notes and tasks will only be available if you are signed in with your
+                                        Google Account. If you aren't, your notes and tasks will be saved locally.</b>
+                                        <br><br>So now that you've had an introduction on how Quick Note works, continue to see its
+                                        amazing functionalities!
+                                        <br><span style="font-size: 120%;"><b>Enjoy!</b></span>
+                                    </p>
+                                </div>
+                                <div class="card-action" style="padding-top: 9px; padding-bottom: 8px; text-align: center;">
+                                    <i class="material-icons pointer previousIntro" style="font-size: 220%;">navigate_before</i>
+                                    <i class="material-icons pointer nextIntro" style="font-size: 220%;">navigate_next</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="features" class="col s12">
+
+                <div class="yourNotes">
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s12 m16">
+                            <div class="card white darken-1">
+                                <div class="card-content black-text" style="padding-bottom: 0; height: 274px; overflow-y: scroll;">
+                                    <p style="font-size: 10px; padding-bottom: 20px; font-family: 'Raleway', sans-serif;">
+                                        <span style="font-size: 120%; font-weight: bold;">There are many features that Quick Note has,
+                                            and we're so excited to introduce them to you!</span>
+                                        <span style="line-height: 19px">
+                                            <br>Here are some of Quick Note's features that we think make Quick Note an awesome tool:
+                                            <br><br>- Access your notes and tasks from any computer
+                                            <br>- Set due dates for tasks
+                                            <br>- Easily add, delete, or edit notes and tasks
+                                            <br>- Control your preferences through settings
+                                            <br>- Easily find help with our help page
+                                            <br>- It can store almost anything
+                                            <br>- It works offline
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="card-action" style="padding-top: 9px; padding-bottom: 8px; text-align: center;">
+                                    <i class="material-icons pointer previousFeatures" style="font-size: 220%;">navigate_before</i>
+                                    <i class="material-icons pointer nextFeatures" style="font-size: 220%;">navigate_next</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="advantages" class="col s12">
+
+                <div class="yourNotes">
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s12 m16">
+                            <div class="card white darken-1">
+                                <div class="card-content black-text" style="padding-bottom: 0; height: 274px; overflow-y: none;">
+                                    <p style="font-size: 10px; padding-bottom: 20px; font-family: 'Raleway', sans-serif;">
+                                        <span style="font-size: 120%; font-weight: bold;">Quick note has so many advantages to offer, which
+                                        is why we think it makes it the perfect noting tool for anyone.</span>
+                                        <span style="line-height: 19px">
+                                            <br>Quick Note has been designed with many features in mind, and we hope each one will
+                                            make your experience with us worthwhile:
+                                            <br><br>- Simple, yet effective
+                                            <br>- Modernly designed using Google's Material Design
+                                            <br>- Easily accessible through the bottom-right side menu (Not seen on this page)
+                                            <br>- Always improving and adapting
+                                            <br>- It's free
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="card-action" style="padding-top: 9px; padding-bottom: 8px; text-align: center;">
+                                    <i class="material-icons pointer previousAdvantages" style="font-size: 220%;">navigate_before</i>
+                                    <i class="material-icons pointer nextAdvantages" style="font-size: 220%;">navigate_next</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 0; margin-left: 5px;">
+            <a class="waves-effect waves-light btn blue-grey" href="getStarted.html" style="font-size: 130%; margin-right: 5px;">Continue!</a>
+            <!--
+                <a class="waves-effect waves-light btn red" href="home.html" style="font-size: 130%; margin-right: 5px;">Notes</a>
+                <a class="waves-effect waves-light btn yellow darken-1" href="todos.html" style="font-size: 130%; margin-right: 5px;">Tasks</a>
+                <a class="waves-effect waves-light btn blue" href="help.html" style="font-size: 130%; margin-right: 5px;">Help</a>
+                <a class="waves-effect waves-light btn blue-grey" href="settings.html" style="font-size: 130%; margin-right: 5px;">Settings</a>
+            -->
+        </div>
+    </div>
+</body>
+</html>

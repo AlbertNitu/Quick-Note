@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks - Quick Note</title>
+
+    <link rel="stylesheet" type="text/css" href="Fonts/Material_Design/icons.css">
+    <link rel="stylesheet" type="text/css" href="CSS/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/todoStyle.css">
+    <link rel="stylesheet" type="text/css" href="CSS/alert.css">
+    <script type="text/javascript" src="JavaScript/jquery.min.js"></script>
+    <script type="text/javascript" src="JavaScript/json.js"></script>
+    <script type="text/javascript" src="JavaScript/jsStorage.js"></script>
+    <script type="text/javascript" src="JavaScript/store.js"></script>
+    <script type="text/javascript" src="JavaScript/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="JavaScript/preventRightClick.js"></script> -->
+    <script type="text/javascript" src="JavaScript/tether.js"></script>
+    <script type="text/javascript" src="JavaScript/bootstrap.js"></script>
+    <script type="text/javascript" src="JavaScript/swal.min.js"></script>
+    <script type="text/javascript" src="JavaScript/date.js"></script>
+    <script type="text/javascript" src="JavaScript/moment.js"></script>
+    <script type="text/javascript" src="JavaScript/todoScript.js"></script>
+</head>
+
+<body>
+    <div class="blurredContent">
+        <div class="infoBar">
+            <div class="time" id="time">Getting time</div>
+        </div>
+
+        <header>
+            <span class="title"><img src="Images/quickNoteIcon.png" alt="Quick Note Icon" height="50px" width="50px" class="quickNoteIcon" />Quick Task</span>
+            <a class="addButton pointer"><span><i class="material-icons plus">add</i></span></a>
+        </header>
+
+        <br>
+        <br>
+
+        <div class="yourNotes all">
+            <div class="row">
+                <div class="col s12 m16">
+                    <div class="card white darken-1">
+                        <div class="card-action valign-wrapper" style="padding-bottom: 0; margin-bottom: 0;">
+                            <span class="card-title" style="margin-right: 30px;">Your tasks</span>
+                            <span class="overdueTasks pointer">Overdue tasks</span>
+                            <span class="upcomingTasks pointer">Upcoming</span>
+                        </div>
+                        <div class="card-content black-text" style="padding-bottom: 0; height: 318px; overflow-y: scroll; margin-top: 0; padding-top: 10px;" id="userTasksCard">
+                            <img src="Images/moon.png" width="150px" height="150px" style="display: block; margin: 0 auto;">
+                            <br>
+                            <br>
+                            <p style="font-size: 15px; padding-bottom: 20px; font-family: 'Raleway', sans-serif; text-align: center;">You don't have any tasks... Yet! To add tasks, press the plus button above.</p>
+                        </div>
+                        <div class="card-action normalOptions">
+                            <a class="clearAll pointer">Finish all tasks</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yourNotes overdue">
+            <div class="row">
+                <div class="col s12 m16">
+                    <div class="card white darken-1">
+                        <div class="card-action valign-wrapper" style="padding-bottom: 0; margin-bottom: 0; padding-right: 0;">
+                            <span class="card-title" style="margin-right: 20px;">Overdue tasks</span>
+                            <span class="allTasks pointer">All tasks</span>
+                            <span class="upcomingTasks pointer">Upcoming</span>
+                        </div>
+                        <div class="card-content black-text" style="padding-bottom: 0; height: 318px; overflow-y: scroll; margin-top: 0; padding-top: 10px;" id="overdueTasksCard">
+                            <img src="Images/moon.png" width="150px" height="150px" style="display: block; margin: 0 auto;">
+                            <br>
+                            <br>
+                            <p style="font-size: 15px; padding-bottom: 20px; font-family: 'Raleway', sans-serif; text-align: center;">Hooray! You don't have any overdue tasks! Overdue tasks will be listed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yourNotes upcoming">
+            <div class="row">
+                <div class="col s12 m16">
+                    <div class="card white darken-1">
+                        <div class="card-action valign-wrapper" style="padding-bottom: 0; margin-bottom: 0; padding-right: 0;">
+                            <span class="card-title" style="margin-right: 25px; font-size: 23px;">Upcoming tasks</span>
+                            <span class="allTasks pointer">All tasks</span>
+                            <span class="overdueTasks pointer">Overdue</span>
+                        </div>
+                        <div class="card-content black-text" style="padding-bottom: 0; height: 318px; overflow-y: scroll; margin-top: 0; padding-top: 10px;" id="upcomingTasksCard">
+                            <img src="Images/moon.png" width="150px" height="150px" style="display: block; margin: 0 auto;">
+                            <br>
+                            <br>
+                            <p style="font-size: 15px; padding-bottom: 20px; font-family: 'Raleway', sans-serif; text-align: center;">You currently have no upcoming tasks. Make sure to check for any
+                            overdue tasks as well.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="selectNotes" style="position: absolute; bottom: 10px; width: 100%;">
+            <div class="row">
+                <div class="col s12 m16">
+                    <div class="card white darken-1">
+                        <div class="card-action selectedOptions blue-grey darken-1" style="height: 55px; padding-top: 17px;">
+                            <p class="pointer" style="padding: 0; margin: 0; font-size: 120%; display: inline-block; color: white;"><span id="numberOfSelectedItems"></span> Selected</p>
+                            &nbsp;&nbsp;&nbsp;
+                            <a class="pointer cancel" style="margin: 10px;">Cancel</a>
+                            <a class="pointer deleteSelected">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed-action-btn horizontal click-to-toggle settings" style="position: fixed; bottom: 1em; right: 1em; font-size: 1.5em;">
+            <a class="btn-floating purple darken-4 waves-effect waves-light" id="menu">
+                <i class="material-icons" style="font-size: 150%;">list</i>
+            </a>
+            <ul>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Search Tasks</span><a class="btn-floating red" id="search"><i class="material-icons" style="font-size: 150%;">search</i></a>
+                </li>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Notes</span><a class="btn-floating yellow darken-1" id="notes" href="home.html"><i class="material-icons" style="font-size: 150%;">event_note</i></a>
+                </li>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 2px;"><span class="tooltiptext">Help</span><a class="btn-floating green" id="delete" href="help.html"><i class="material-icons" style="font-size: 170%;">help_outline</i></a>
+                </li>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Settings</span><a class="btn-floating blue" id="settings" href="settings.html"><i class="material-icons" style="font-size: 150%;">settings</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="todoDueDate" style="color: #D50000; z-index: 100; height: 30px; display: none; position: fixed; top: 327px; left: 35px; padding: 0; background-color: transparent; border-radius: 10px;">
+        <input type="date" placeholder="Due Date" class="datepicker" id="datepicker" style="color: #D50000; border-bottom: 2px solid #D50000; display: inline-block; width: 110px; text-align: center; font-size: 150%; padding-bottom: -10px;">
+    </div>
+
+    <div id="newTask" class="valign-wrapper modal modal-fixed-footer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 99; font-size: 12px; height: 139px; width: 320px;">
+        <div class="modal-content">
+            <input type="text" id="title" placeholder="New Task Name" class="newNoteTitle" style="font-size: 20px; border-bottom: 3px solid transparent; margin-bottom: 0; color: #D50000; margin-top: 5px; overflow-y: hidden;" />
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-red btn-flat discardNewTask pointer">Discard</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat createNewTask pointer">Create</a>
+        </div>
+    </div>
+
+    <div id="editTask" class="valign-wrapper modal modal-fixed-footer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 99; font-size: 12px; height: 139px; width: 320px; padding-bottom: 0;">
+        <div class="modal-content">
+            <input type="text" id="editTitle" placeholder="Task Name" class="newNoteTitle" style="font-size: 20px; border-bottom: 3px solid transparent; margin-bottom: 0; color: #D50000; margin-top: 5px; overflow: hidden;" />
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-red btn-flat deleteTask pointer" style="padding-left: 10px; padding-right: 10px;">Finish</a>
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat doNotSave pointer" style="padding-left: 10px; padding-right: 10px;">Cancel</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat saveTask pointer" style="padding-left: 10px; padding-right: 10px;">Save</a>
+        </div>
+    </div>
+
+    <div class="searchTasks" id="searchTasks" style="display: none;">
+        <div id="searchModal" class="valign-wrapper modal" style=" height: 78px; position: fixed; top: 15%; left: 50%; transform: translate(-50%, -50%); display: block; z-index: 100; font-size: 12px; padding-bottom: 0;">
+            <div class="modal-content">
+                <input type="text" id="searchQuery" placeholder="Search Tasks" class="newNoteTitle" style="font-size: 26px; border-bottom: 3px solid transparent; margin-bottom: 0; color: #D50000;" />
+            </div>
+        </div>
+
+        <div id="listOfTask" class="valign-wrapper modal modal-fixed-footer" style="height: 400px; width: 330px; position: fixed; top: 57%; left: 50%; transform: translate(-50%, -50%); display: block; z-index: 100; font-size: 12px;">
+            <div class="modal-content" id="searchTasksResult">
+                <p style="text-align: center;">You don't currently have any tasks. You can add some by pressing the blue button at the top right corner of the page.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-action modal-close waves-effect waves-red btn-flat closeSearch pointer">Close</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

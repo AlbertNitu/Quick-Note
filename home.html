@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notes - Quick Note</title>
+
+    <link rel="stylesheet" type="text/css" href="Fonts/Material_Design/icons.css">
+    <link rel="stylesheet" type="text/css" href="CSS/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homeStyle.css">
+    <link rel="stylesheet" type="text/css" href="CSS/alert.css">
+    <script type="text/javascript" src="JavaScript/jquery.min.js"></script>
+    <script type="text/javascript" src="JavaScript/store.js"></script>
+    <script type="text/javascript" src="JavaScript/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="JavaScript/preventRightClick.js"></script> -->
+    <script type="text/javascript" src="JavaScript/tether.js"></script>
+    <script type="text/javascript" src="JavaScript/bootstrap.js"></script>
+    <script type="text/javascript" src="JavaScript/alert.min.js"></script>
+    <script type="text/javascript" src="JavaScript/homeScript.js"></script>
+</head>
+
+<body>
+    <div class="blurredContent">
+        <div class="infoBar">
+            <div class="time" id="time">Getting time</div>
+        </div>
+
+        <header>
+            <span class="title"><img src="Images/quickNoteIcon.png" alt="Quick Note Icon" height="50px" width="50px" class="quickNoteIcon" />Quick Note</span>
+            <a class="addButton pointer"><span><i class="material-icons plus">add</i></span></a>
+        </header>
+
+        <br>
+        <br>
+
+        <div class="yourNotes">
+            <div class="row">
+                <div class="col s12 m16">
+                    <div class="card white darken-1">
+                        <div class="card-action" style="padding-bottom: 0; margin-bottom: 0;">
+                            <span class="card-title">Your notes</span>
+                        </div>
+                        <div class="card-content black-text" style="padding-bottom: 0; height: 318px; overflow-y: scroll; margin-top: 0; padding-top: 10px;" id="userNotesCard">
+                            <img src="Images/sun.png" width="150px" height="150px" style="display: block; margin: 0 auto;">
+                            <br><br>
+                            <p style="text-align: center; font-size: 15px; padding-bottom: 20px; font-family: 'Raleway', sans-serif">You don't have any notes... Yet! To add notes, press the plus button above.</p>
+                        </div>
+                        <div class="card-action normalOptions">
+                            <a class="clearAll pointer">Delete all</a>
+                        </div>
+                        <div class="card-action selectedOptions blue-grey darken-1" style="height: 55px; padding-top: 17px;">
+                            <p class="pointer" style="padding: 0; margin: 0; font-size: 120%; display: inline-block; color: white;"><span id="numberOfSelectedItems"></span> Selected</p>
+                            &nbsp;&nbsp;&nbsp;
+                            <a class="pointer cancel" style="margin: 10px;">Cancel</a>
+                            <a class="pointer deleteSelected">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-action-btn horizontal click-to-toggle settings" style="position: fixed; bottom: 1em; right: 1em; font-size: 1.5em;">
+            <a class="btn-floating purple darken-4 waves-effect waves-light" id="menu">
+                <i class="material-icons" style="font-size: 150%;">list</i>
+            </a>
+            <ul>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Search Notes</span><a class="btn-floating red" id="search"><i class="material-icons" style="font-size: 150%;">search</i></a>
+                </li>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Tasks</span><a class="btn-floating yellow darken-1" id="todos" href="todos.html"><i class="material-icons" style="font-size: 150%;">done</i></a>
+                </li>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 2px;"><span class="tooltiptext">Help</span><a class="btn-floating green" id="help" href="help.html"><i class="material-icons" style="font-size: 170%;">help_outline</i></a>
+                </li>
+                <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Settings</span><a class="btn-floating blue" id="settings" href="settings.html"><i class="material-icons" style="font-size: 150%;">settings</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="newNote" class="valign-wrapper modal modal-fixed-footer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 100; font-size: 12px;">
+        <div class="modal-content">
+            <input type="text" id="title" placeholder="New Note" class="newNoteTitle" style="font-size: 20px; border-bottom: 3px solid transparent; margin-bottom: 10px; color: #64B5F6;" />
+            <br>
+            <textarea id="content" placeholder="Write the content of your note here..." class="newNoteContent" style="font-size: 13px;"></textarea>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-red btn-flat discardNewNote pointer">Discard</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat createNewNote pointer">Create</a>
+        </div>
+    </div>
+
+    <div id="editNote" class="valign-wrapper modal modal-fixed-footer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 100; font-size: 12px;">
+        <div class="modal-content">
+            <input type="text" id="titleEditNote" placeholder="Title" class="newNoteTitle" style="font-size: 20px; border-bottom: 3px solid transparent; margin-bottom: 10px; color: #64B5F6;" />
+            <br>
+            <textarea id="contentEditNote" placeholder="Write the content of your note here..." class="newNoteContent" style=" font-size: 13px;"></textarea>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-red btn-flat deleteNote pointer">Delete</a>
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat doNotSave pointer">Cancel</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat saveNote pointer">Save</a>
+        </div>
+    </div>
+
+    <div class="searchNotes" id="searchNotes" style="display: none;">
+        <div id="searchModal" class="valign-wrapper modal" style=" height: 78px; position: fixed; top: 15%; left: 50%; transform: translate(-50%, -50%); display: block; z-index: 100; font-size: 12px; padding-bottom: 0;">
+            <div class="modal-content">
+                <input type="text" id="searchQuery" placeholder="Search Notes" class="newNoteTitle" style="font-size: 26px; border-bottom: 3px solid transparent; margin-bottom: 0; color: #64B5F6;" />
+            </div>
+        </div>
+
+        <div id="listOfNote" class="valign-wrapper modal modal-fixed-footer" style="height: 400px; width: 330px; position: fixed; top: 57%; left: 50%; transform: translate(-50%, -50%); display: block; z-index: 100; font-size: 12px;">
+            <div class="modal-content" id="searchNotesResult">
+                <p style="text-align: center;">You don't currently have any notes. You can add some by pressing the red button at the top right corner of the page.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-action modal-close waves-effect waves-red btn-flat closeSearch pointer">Close</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

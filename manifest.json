@@ -1,0 +1,51 @@
+{
+  "name": "Quick Note",
+  "description": "An easy and efficient way to jot down anything: anytime, anywhere.",
+  "version": "3.9.2",
+  "manifest_version": 2,
+  "short_name": "Notes",
+  "offline_enabled": true,
+  "browser_action": {
+    "default_title": "Quick Note"
+  },
+  "background": {
+    "scripts": ["JavaScript/jquery.min.js", "JavaScript/date.js", "JavaScript/moment.js", "JavaScript/background.js"],
+    "persistent": false
+  },
+  "permissions": ["storage"],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+Q",
+        "mac": "Alt+Q",
+        "chromeos": "Alt+Q",
+        "linux": "Alt+Q"
+      }
+    },
+    "notes": {
+      "suggested_key": {
+        "windows": "Alt+N",
+        "mac": "Alt+N",
+        "chromeos": "Alt+N",
+        "linux": "Alt+N"
+      },
+      "description": "Open Notes Page"
+    },
+    "tasks": {
+      "suggested_key": {
+        "windows": "Alt+T",
+        "mac": "Alt+T",
+        "chromeos": "Alt+T",
+        "linux": "Alt+T"
+      },
+      "description": "Open Tasks Page"
+    }
+  },
+  "icons": {
+    "16": "Images/16.png",
+    "32": "Images/32.png",
+    "48": "Images/48.png",
+    "64": "Images/64.png",
+    "128": "Images/128.png"
+  }
+}
