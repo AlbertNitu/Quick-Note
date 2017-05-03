@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Help - Quick Note</title>
+
+    <link rel="stylesheet" type="text/css" href="Fonts/Material_Design/icons.css">
+    <link rel="stylesheet" type="text/css" href="CSS/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/helpStyle.css">
+    <script type="text/javascript" src="JavaScript/jquery.min.js"></script>
+    <script type="text/javascript" src="JavaScript/store.js"></script>
+    <script type="text/javascript" src="JavaScript/materialize.min.js"></script>
+    <script type="text/javascript" src="JavaScript/helpScript.js"></script>
+    <!-- <script type="text/javascript" src="JavaScript/preventRightClick.js"></script> -->
+</head>
+
+<body>
+    <div class="blurredContent">
+        <div class="infoBar">
+            <div class="time" id="time">Getting time</div>
+        </div>
+
+        <header>
+            <span class="title">Help</span>
+            <a href="deciding.html" class="addButton"><span><i class="material-icons plus">home</i></span></a>
+        </header>
+
+        <br>
+        <br>
+
+        <div class="yourNotes">
+            <div class="row">
+                <div class="col s12 m16">
+                    <div class="card white darken-1">
+                        <div class="card-action" style="padding-bottom: 0px; margin-bottom: 0px;">
+                            <span class="card-title">How to use Quick Note</span>
+                        </div>
+                        <div class="card-content black-text" style="padding-bottom: 0px; height: 318px; overflow-y: scroll;" id="userNotesCard">
+                            <p style="font-size: 12px; padding-bottom: 20px; font-family: 'Raleway', sans-serif">
+                                Quick Note is meant to be as simple as a planner can be while allowing you to take notes and set todos. The Help page will provide more information about the notes, tasks, and settings page, and you can always ask a question or provide a suggestion at anitu314@gmail.com.
+                            </p>
+                                <ul class="collapsible" data-collapsible="accordion" style="font-size: 150%;">
+                                    <li>
+                                        <div class="collapsible-header" style="padding: 6px;"><i class="material-icons">event_note</i>Notes</div>
+                                        <div class="collapsible-body" style="font-size: 10px">
+                            <p>
+                                The notes page allows you to store notes and lists (whether it be a list of your favorite songs or notes of a video) of virtually anything.<br><br>
+                                <b>On Startup</b>
+                                <br>When the notes page is loaded, you will see three main components: a red button at the top right corner of the page (to add notes), a box containing all of your current notes, and a purple button at the bottom right corner of the page. (To access the different pages)<br><br>
+                                <b>Adding a note</b>
+                                <br>To add a note, press the red button at the top right corner of the page. Enter your note's title and its content and click the 'Create' button to create your new note. The note will then be added to your notes collection. (Make sure that the title does not match the title of any other of your notes) If you wish to discard the note, click on the discard button and confirm.<br><br>
+                                <b>Searching notes</b>
+                                <br>To search for notes, click the purple button at the bottom right corner of the page, and then click on the search icon. A modal will popup, listing all of your notes. Type into the input box to find the note you're looking for. (Notes whose titles contain the text you typed in will be listed. All the others will be omitted) You can click on a note card to edit the note or press the delete icon to delete it.<br><br>
+                                <b>Editing notes</b>
+                                <br>To edit a note, simply find it in your notes collection or by searching for it and click on it. Once clicked, a modal will open with your note. You can change both its title or content, as long as the title doesn't match the title of any other note. To save your note, press the save button at the bottom of the modal. You can also delete or discard changes made to your note by pressing the respective buttons and confirming your action.<br><br>
+                                <b>Deleting notes</b>
+                                <br>There are two ways to delete notes: by finding the note in your notes collection (or by searching for it) and pressing the delete icon beside the note, or by clicking on the note to edit it and then clicking on the delete button.<br><br>
+                            </p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header" style="padding: 6px;"><i class="material-icons">check</i>Tasks</div>
+                            <div class="collapsible-body" style="font-size: 10px">
+                                <p>
+                                    The tasks page allows you to store tasks or todos (like a list of current projects) of virtually anything.<br><br>
+                                    <b>On Startup</b>
+                                    <br>When the tasks page is loaded, you will see three main components: a blue button at the top right corner of the page (to add tasks), a box containing all of your current tasks, and a purple button at the bottom right corner of the page. (To access the different pages)<br><br>
+                                    <b>Adding a task</b>
+                                    <br>To add a task, press the blue button at the top right corner of the page. Enter your task's title as well a due date, (if there is one; no due date is necessary) and click the 'Create' button to create your new task. The task will then be added to your tasks collection. (Make sure that the task's title does not match the title of any other of your tasks) If you wish to discard the task, click on the discard button and confirm.<br><br>
+                                    <b>Searching tasks</b>
+                                    <br>To search for tasks, click the purple button at the bottom right corner of the page, and then click on the search icon. A modal will popup, listing all of your tasks. Type into the input box to find the task title you're looking for. (Tasks whose titles contain the text you typed in will be listed. All the others will be omitted) You can click on a task card to edit the note or press the delete icon to finish it.<br><br>
+                                    <b>Editing tasks</b>
+                                    <br>To edit a task, simply find it in your tasks collection or search for it and click on it. Once clicked, a modal will open with your task's name as well as its due date, which you can edit. To save your task, press the save button at the bottom of the modal. You can also finish your task (this is described more in the 'Finishing tasks' section) or discard changes made to your task by pressing the respective buttons and confirming your action.<br><br>
+                                    <b>Viewing due dates</b>
+                                    <br>By default, the due date of each task will be next to its corresponding task, and will display the number of days, months and years until the task is overdue. You can also view a task's due date by clicking on it. (To edit it) Changing a task's due date is simple: click on the task and edit the red input box below the task's title.<br><br>
+                                    <b>Finishing tasks</b>
+                                    <br>Finishing a task is identical to how a note would be deleted. There are two ways to finish tasks: by finding the task in your tasks collection (or by searching for it) and pressing the delete icon beside the task, (and then confirming it) or editing the task and clicking on the delete button.<br><br>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header" style="padding: 6px;"><i class="material-icons">settings</i>Settings</div>
+                            <div class="collapsible-body" style="font-size: 10px">
+                                <p>
+                                    <b>Usage</b>
+                                    <br>The settings page is a fairly simple page designed to allow you to change different Quick Note options.<br><br>
+                                    <b>Changing default page</b>
+                                    <br>You can change your default page, which makes Quick Note open your Notes page or your Tasks page on startup, depending on your preference. This is useful if you use notes more than tasks, or vice verse.<br><br>
+                                    <b>Task Due Dates</b>
+                                    <br>This option controls whether or not due dates for each task are shown on its card. You can deselect this if you prefer not to see each task's due dates on the home screen. However, each task's due dates are still visible when you edit the task. (By clicking on it)
+                                </p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header" style="padding: 6px;"><i class="material-icons">keyboard</i>Shortcuts</div>
+                            <div class="collapsible-body" style="font-size: 10px">
+                                <p>
+                                    Each page (notes, tasks, settings, and help) has shortcuts that we hope will help make each page more accessible. <br>You can change the
+                                    extension startup shortcuts by going to chrome://extensions. You will find a "Keyboard Shortcuts" option at the bottom of the page.<br><br>
+                                    <b>Extension Startup Shortcuts</b>
+                                    <br>- Alt+Q = Open Quick Note to the default page
+                                    <br>- Alt+N = Open the Notes page
+                                    <br>- Alt+T = Open the tasks page
+                                    <br><br>
+                                    <b>General Shortcuts</b>
+                                    <br>- m = Opens menu
+                                    <br>- 1 = Opens Notes page
+                                    <br>- 2 = Opens Tasks page
+                                    <br>- 3 = Opens Help page
+                                    <br>- 4 = Opens Settings page
+                                    <br><br>
+                                    <b>Notes Page</b>
+                                    <br>- n = Creates a new note
+                                    <br>- s = Opens the search modal
+                                    <br><br>
+                                    <b>Tasks Page</b>
+                                    <br>- n = Creates a new task
+                                    <br>- s = Opens the search modal
+                                    <br>- a = Shows the 'All tasks' section
+                                    <br>- o = Shows the 'Overdue' section
+                                    <br>- u = Shows the 'Upcoming' section
+                                    <br><br>
+                                    <b>Settings Page</b>
+                                    <br>- s = Saves settings
+                                    <br>- r = Resets settings
+                                </p>
+                            </div>
+                        </li>
+                        </ul>
+
+                        </p>
+                        <br>
+                        <p style="font-size: 12px; padding-bottom: 20px; font-family: 'Raleway', sans-serif">
+                            <span style="font-size: 14px;"><b>Contact & Suggestions</b></span>
+                            <br>To ask a personal question or suggest a new feature, don't hesitate to email anitu314@gmail.com.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a id="goal" class="optionsHelp ourGoal">Our goal</a>
+                        <a id="credits" class="optionsHelp creditsAcknowledgements">Credits & Acknowledgments</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn horizontal click-to-toggle settings" style="position: fixed; bottom: 1em; right: 1em; font-size: 1.5em;">
+        <a class="btn-floating purple darken-4 waves-effect waves-light" id="menu">
+            <i class="material-icons" style="font-size: 150%;">list</i>
+        </a>
+        <ul>
+            <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Notes</span><a class="btn-floating red" id="search" href="home.html"><i class="material-icons" style="font-size: 150%;">event_note</i></a></li>
+            <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 4px;"><span class="tooltiptext">Tasks</span><a class="btn-floating yellow darken-1" id="todos" href="todos.html"><i class="material-icons" style="font-size: 150%;">done</i></a></li>
+            <li class="settingsSubFunctions tooltip" style="position: relative; bottom: 15px; margin-right: 2px;"><span class="tooltiptext">Settings</span><a class="btn-floating blue" id="help" href="settings.html"><i class="material-icons" style="font-size: 170%;">settings</i></a></li>
+        </ul>
+    </div>
+    </div>
+
+    <div id="ourGoalModal" class="valign-wrapper modal modal-fixed-footer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 100; font-size: 12px; height: 550px; padding-bottom: 0px;">
+        <div class="modal-content">
+            <h4>Our Goal</h4>
+            <p>We know that life can be a mess. We know it can be complicated. Quick Note's goal is simple: allow people around the world to organize their goals, tasks, ambitions and notes and focus on what matters in life. Whether it be Chemistry notes, favorite songs, or upcoming events, Quick Note allows you to note anything and everything quickly and efficiently.
+                <br>For us, creating Quick Note has been a dream come true: creating a simple yet elegant extension that we hope will simplify the lives of many people.
+                <br>With this in mind, we truly hope that Quick Note has been a positive experience for you and we look forward to improving Quick Note for the better.
+                <br><br>Cheers!</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat closeOurGoal">Close</a>
+        </div>
+    </div>
+
+
+    <div id="creditsModal" class="valign-wrapper modal modal-fixed-footer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 100; font-size: 12px; height: 550px; padding-bottom: 0px;">
+        <div class="modal-content">
+            <h4>Credits & Acknowledgements</h4>
+            <p>Quick Note could not have been possible without the contribution of generous friends and amazing services. Listed below are the people and services that made Quick Note a success:
+                <br><br><b>- Creator:</b> Albert, a developer that has a passion for coding! He loves helping people and wants to become a surgeon when he grows up. He also enjoys Science (Biology) and Mathematics (Calculus & Trig.) beyond anything else.
+                <br><b>- Tester:</b> Eric, another keen coder. He also really enjoys Mathematics and in particular, Calculus.
+            </p>
+            <hr>
+            <b>- Services:</b> Store.js & jStorage.js -- Amazing storage services that any developer should use!
+            <br>Materialize.css -- A Material Design Service that we used to make Quick Note beautiful. (We hope!)
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat closeCredits">Close</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
